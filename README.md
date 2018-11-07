@@ -11,7 +11,6 @@ The major target of this project is to explore HyperColumns and how it can be us
 A colorful image can be decomposed into three channels, such as RGB, LAB, HSL and HSV.  LAB is used in this project (https://en.wikipedia.org/wiki/Lab_color_space) where L means "lightness". L-channel representing a gray color image is the input of my model,  and the output is the predicted colorful image.
 ![](pics/2.jpg)
 
-
 ### 2.2 Does one channel contains all information of the other two channels ?
 This is the first question many people would ask themselves at the very beginning. Me too. More specifically, does L channel contains all information of the A & B channels ? No. Then how can we recover A & B channels from L channel ?
 
@@ -21,7 +20,6 @@ The answer to this question leads to the usage of HyperColumns and a pre-trained
 Making an analogy. Given three data points, we need to output a curve to fit them. There are tons of various curves that can fit these three data points. However, if somebody tells us (external information !) that the curve is most probably a quardratic curve, then we probably will produce the blue color curve.
 ![](pics/4.jpg)
 In order to harvest this external information that VGG has to provide, we need HyperColumns.
-
 
 ## 3. HyperColumns and VGG
 
