@@ -51,13 +51,11 @@ MODEL_URL = 'http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydee
         'relu5_3', 'conv5_4', 'relu5_4'
     )
 
-
 ### 3.2 HyperColumns from VGG
 
 The layers of a convolutional network is like as a non-linear counterpart of the image pyramids. The feature maps have different sizes. The topper they are on the VGG model, the smaller their sizes are. However, we need them to be of the same size, e.g., the size of the input grey image. Thus, the feature maps are upscaled by bilinear interpolation and are contatenated together to give us a "HyperColumn".  (It looks to me more like HyperMaps rather than HyperColumns though.)
 
 ![](pics/HyperColumns.jpg)
-
 
         relu1_2  = image_net["relu1_2"]
         layer_relu1_2 = tf.image.resize_bilinear(relu1_2, (IMAGE_SIZE, IMAGE_SIZE)) 
